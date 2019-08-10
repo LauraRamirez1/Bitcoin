@@ -7,11 +7,10 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <p>
-          Valor Bitcoin
+        <p>Valor Bitcoin
         </p>
       </nav>
-      <CurrentValue />
+      <CurrentValue/>
       <GraphicMonth />
     </div>
   );

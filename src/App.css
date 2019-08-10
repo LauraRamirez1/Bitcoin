@@ -1,7 +1,10 @@
-.App{
-  background-color: white;
-  min-height: 100vh;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
+.App nav{
+  margin: 3%;
+  background-color:#2B6AD3;
+  color: white;
+  font-size:140%;
+}
+
+.App nav p{
+  padding: 2%;
 }

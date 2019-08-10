@@ -1,0 +1,13 @@
+.currentValue{
+    width: 80%;
+    box-shadow: 1px 1px 1px 1px #D7DADE;
+    text-align: center;
+    padding: 2%;
+
+}
+
+.currentValue p {
+    margin:0;
+    padding:0
+}
+
