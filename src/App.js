@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CurrentValue from './components/CurrentValue';
+import GraphicMonth from './components/GraphicMonth';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <nav>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Valor Bitcoin
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </nav>
+      <CurrentValue />
+      <GraphicMonth />
     </div>
   );
 }
