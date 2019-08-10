@@ -11,6 +11,9 @@ export default class GraphicMonth extends React.Component {
    .then(res => {
        console.log(res.bpi);
     })
+    .catch(error => {
+      console.log(error);
+    });
   }
   render() {
     return (
