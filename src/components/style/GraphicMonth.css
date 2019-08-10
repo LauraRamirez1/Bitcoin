@@ -1,9 +1,8 @@
 .graphic{
     margin-top: 5%;
-    width: 80%;
+    margin: 2rem;
+    padding: 1rem;
     height: 200%;
     box-shadow: 1px 1px 1px 1px #D7DADE;
     text-align: left;
-    padding: 2%;
-    flex-direction: column;
 }
