@@ -5,23 +5,28 @@ import './style/CurrentValue.css';
 
 export default class CurrentValue extends React.Component{
 
-  state= {
-    price: null,
-  };
+  constructor(props) {
+    super(props);
+    this.componentPriceValue=this.componentPriceValue.bind(this);
+    this.state = {
+      price: 0
+    }
+  }
 
   componentPriceValue() {
     Axios.get( `https://api.coindesk.com/v1/bpi/currentprice/USD.json`)
     .then(res => {
-      this.setState({ price: res.data.bpi.USD.rate_float.toFixed().replace(/\B(?=(\d{3})+(?!\d))/g, ".") });
+      this.setState({ price: res.data.bpi.USD.rate_float.toFixed().replace(/\B(?=(\d{3})+(?!\d))/g, ".")});
     })
     .catch(error => {
       console.log(error);
     });
   }
-    componentDidMount() {
-      this.componentPriceValue()
-      setInterval(() => this.componentPriceValue(), 60000);
-    }
+
+  componentDidMount() {
+    this.componentPriceValue()
+    setInterval(() => this.componentPriceValue(), 60000);
+  }
 
     render() {
       return (
@@ -32,4 +37,3 @@ export default class CurrentValue extends React.Component{
         )
     }
 }
- 
