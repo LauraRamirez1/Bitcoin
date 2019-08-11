@@ -6,6 +6,12 @@ import './style/GraphicMonth.css';
 
 export default class GraphicMonth extends React.Component {
   
+  constructor(props) {
+    super(props);
+    this.state = {
+      graphicdates: [],
+    }
+  }
   componentgraphicMonth() {
   axios.get(`https://api.coindesk.com/v1/bpi/historical/close.json`)
    .then(res => {

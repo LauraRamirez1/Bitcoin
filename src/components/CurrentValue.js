@@ -1,30 +1,34 @@
 import React from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 import './style/CurrentValue.css';
+
+
 export default class CurrentValue extends React.Component{
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      price: '',
-    }
-  }
+  state= {
+    price: null,
+  };
+
   componentPriceValue() {
-    axios.get( `https://api.coindesk.com/v1/bpi/currentprice/USD.json`)
+    Axios.get( `https://api.coindesk.com/v1/bpi/currentprice/USD.json`)
     .then(res => {
-      this.setState({ price: res.bpi.USD.rate });
+      this.setState({ price: res.data.bpi.USD.rate_float.toFixed().replace(/\B(?=(\d{3})+(?!\d))/g, ".") });
+      console.log(this.state)
     })
     .catch(error => {
       console.log(error);
     });
   }
+    componentDidMount() {
+      this.componentPriceValue()
+      setInterval(() => this.componentPriceValue(), 60000);
+    }
 
     render() {
-      const { price } = this.state;
       return (
         <section className="currentValue">
          <p>Valor Actual</p>
-         <b>$ {price} USD</b>
+         <b>$ {this.state.price} USD</b>
           </section>
         )
     }
